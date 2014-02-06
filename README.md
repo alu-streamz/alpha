@@ -88,7 +88,8 @@ with <br />
 <pre>
 <code>ifconfig wwan0 down
 sleep 1
-ifconfig wwan0 up</code>
+ifconfig wwan0 up
+route -A inet6 add default dev wwan0</code>
 </pre><br />
 ...and  replace the line<br />
 <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
@@ -102,4 +103,5 @@ nameserver 2001:4860:4860::8844</code>
 </ul>
 Once you restart your beaglebone, you should be connected to ipv6 and able to ping<br />
 example: <code>ping6 alcatel-lucent.com</code><br />
-Enjoy the ipV6 over LTE on your connected objet!
+<br />
+Enjoy ipV6 over LTE on your connected objet!
