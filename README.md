@@ -62,7 +62,7 @@ Write and test your first code with Cloud9
 ======================
 
 <ul>
-<li>access the Cloud9 IDE of the beagleBone Black by pointing your web browser at the url http://192.168.1.2:3000 (ethernet connection) or http://192.168.7.2:3000 (usb connection)</li>
+<li>access the Cloud9 IDE of the BeagleBone Black by pointing your web browser at the url http://192.168.1.2:3000 (ethernet connection) or http://192.168.7.2:3000 (usb connection)</li>
 <li>enter the cloud9 username/password that was provided to you with the kit (paper card inside the beaglebone black box)</li>
 <li>look at javascript examples in "demo" folder of the left "Project Files" pane, see how to control the GPIOs or the leds</li>
 <li>create a new file from the menu File>New File (or use the Control+N shortcut)</li>
