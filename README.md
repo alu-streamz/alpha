@@ -87,12 +87,13 @@ replace the lines<br />
 with <br />
 <pre>
 <code>ifconfig wwan0 down
-sleep 1<br />
+sleep 1
 ifconfig wwan0 up</code>
 </pre><br />
 ...and  replace the line<br />
 <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
-with the line <code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code>
+with the line<br />
+<code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code><br />
 <li>in the file /etc/resolv.conf, add the following lines:<br /></li>
 <pre>
 <code>nameserver 2001:4860:4860::8888
