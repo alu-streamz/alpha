@@ -83,6 +83,7 @@ If you intend to set up IPv6, make sure to change the default cloud9 credentials
 In the file /usr/share/cloud9, replace the user/password:<br />
 <pre>
 <code>
+...
 secure: {
   user: "new_username",
   password: "new_password"
