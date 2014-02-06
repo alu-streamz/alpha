@@ -1,4 +1,4 @@
-alpha
+Alpha
 =====
 
 StreamZ is an initiative to foster the creation of wirelessly connected objects that build on 4G to deliver new services. We can explore together all the means to get a working and easy to use 4G prototyping platform: using linux boards equiped with 4G usb dongles, integrating 4G connectivity within the linux board itself, embedding an integrated development environment, including sxamples of services demonstrating the 4G specificities...
