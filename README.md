@@ -10,9 +10,11 @@ Plug the kit
 ======================
 
 To get started with the kit, first assemble the parts together as follow:
-1 - plug the 4G usb dongle (with its 4G SIM card inserted in its SIM slot) into the USB slot of the BeagleBone Black
-2 - plug the power supply connector to the 5V supply slot of the BeagleBone Black, located near the ethernet slot
-3 - power on the board by plugging the other end of the power supply
+<ul>
+<li>1 - plug the 4G usb dongle (with its 4G SIM card inserted in its SIM slot) into the USB slot of the BeagleBone Black</li>
+<li>2 - plug the power supply connector to the 5V supply slot of the BeagleBone Black, located near the ethernet slot</li>
+<li>3 - power on the board by plugging the other end of the power supply</li>
+</ul>
 
 
 You should be all set. The board will boot up and connect to the available wireless network; a solid blue led on the 4G usb dongle will confirm that the kit is wirelessly connected to internet.
@@ -61,7 +63,7 @@ passwd My_N3w_PassW0rd
 Write and test your first code with Cloud9
 ======================
 
-1 - access the Cloud9 IDE of the beagleBone Black by pointing your web browser at the url http://192.168.1.2:3000 (ethernet connection) or 192.168.7.2:3000 (usb connection)
+1 - access the Cloud9 IDE of the beagleBone Black by pointing your web browser at the url http://192.168.1.2:3000 (ethernet connection) or http://192.168.7.2:3000 (usb connection)
 2 - enter the cloud9 username/password that was provided to you with the kit (paper card inside the beaglebone black box)
 3 - look at javascript examples in "demo" folder of the left "Project Files" pane, see how to control the GPIOs or the leds
 4 - create a new file from the menu File>New File (or use the Control+N shortcut)
