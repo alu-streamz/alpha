@@ -79,16 +79,18 @@ Get IPv6 working
 ==================
 Yes, IPv6 works fine on your kit. To get it set up, do the following:
 <ul>
-<li>change the /etc/network/interfaces file, replacing line <code>iface wwan0 inet dhcp</code> by <code>iface wwan0 inet6 dhcp</code></li>
-<li>in the file /home/root/4Glink, replace the lines
-<code>dhclient wwan0</code>
-with
-<code>ifconfig wwan0 down
-sleep 1
-ifconfig wwan0 up</code></li>
-<li>in /home/root/4Glink you should also replace the APN with the proper IPv6 APN.</li>
-Instead of looking like this <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' \> /dev/ttyUSB1 </code><br />
-your line should look like that <code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' \> /dev/ttyUSB1</code>
+<li>change the /etc/network/interfaces file</li>
+replace line <code>iface wwan0 inet dhcp</code> by line <code>iface wwan0 inet6 dhcp</code>
+<li>change the /home/root/4Glink file</li>
+replace the lines<br />
+<code>dhclient wwan0</code><br />
+with <br />
+<code>ifconfig wwan0 down<br />
+sleep 1<br />
+ifconfig wwan0 up</code><br />
+...and  replace the line<br />
+<code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
+with the line <code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code>
 <li>in the file /etc/resolv.conf, add the following lines:
 <code>nameserver 2001:4860:4860::8888
 nameserver 2001:4860:4860::8844</code>
