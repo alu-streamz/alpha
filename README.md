@@ -25,7 +25,9 @@ Connect to the kit / USB style
 
 <ul>
 <li>plug the mini usb end of the usb cable into the BeagleBone Black usb slot located near the ethernet slot</li>
-<li>plug the other end of the usb cable into a PC. The BeagleBone Black should establish automatically create a link to the PC and be accessible at the address 192.168.7.2</li>
+<li>plug the other end of the usb cable into a PC. The BeagleBone Black should appear as an external storage device (let say... E:/ in our example).</li>
+<li>install the BeagleBone Black drivers by running the appropriate executable in the "Drivers" folder of E:/ (remember we picked E:/ as the external storage device in our example)</li>
+<li>the BeagleBone Black should automatically create a link to the PC and be accessible at the address 192.168.7.2</li>
 <li>you can ssh into the BeagleBone Black at address 192.168.7.2 using user "root" (no password by default)</li>
 <code>
 ssh -l root 192.168.7.2
@@ -72,3 +74,26 @@ Write and test your first code with Cloud9
 
 Congratulations! You have just tamed your BeagleBone Black!<br />
 Now go and build awesome stuff!
+
+Get IPv6 working
+==================
+Yes, IPv6 works fine on your kit. To get it set up, do the following:
+<ul>
+<li>change the /etc/network/interfaces file, replacing line <code>iface wwan0 inet dhcp</code> by <code>iface wwan0 inet6 dhcp</code></li>
+<li>in the file /home/root/4Glink, replace the lines
+<code>dhclient wwan0</code>
+with
+<code>ifconfig wwan0 down
+sleep 1
+ifconfig wwan0 up</code></li>
+<li>in /home/root/4Glink you should also replace the APN with the proper IPv6 APN.</li>
+Instead of looking like this <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' \> /dev/ttyUSB1 </code><br />
+your line should look like that <code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' \> /dev/ttyUSB1</code>
+<li>in the file /etc/resolv.conf, add the following lines:
+<code>nameserver 2001:4860:4860::8888
+nameserver 2001:4860:4860::8844</code>
+</li>
+</ul>
+Once you restart your beaglebone, you should be connected to ipv6 and able to ping
+<code>ping6 alcatel-lucent.com</code>
+Enjoy ^_^
