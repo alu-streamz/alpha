@@ -75,6 +75,23 @@ Write and test your first code with Cloud9
 Congratulations! You have just tamed your BeagleBone Black!<br />
 Now go and build awesome stuff!
 
+
+Change Cloud9 default login/password
+=================
+
+If you intend to set up IPv6, make sure to change the default cloud9 credentials.<br />
+In the file /usr/share/cloud9, replace the user/password:<br />
+<pre>
+<code>
+secure: {
+  user: "new_username",
+  password: "new_password"
+}
+</code>
+</pre>
+
+
+
 Get IPv6 working
 ==================
 Yes, IPv6 works fine on your kit. To get it set up, do the following:
