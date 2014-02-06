@@ -101,7 +101,7 @@ with the line<br />
 nameserver 2001:4860:4860::8844</code>
 </pre></li>
 </ul>
-Once you restart your beaglebone, you should be connected to ipv6 and able to ping<br />
-example: <code>ping6 alcatel-lucent.com</code><br />
+Once you restart your beaglebone, you should be connected to ipv6 and able to ping.<br />
+For example: <code>ping6 usine.io</code>   ;)<br />
 <br />
 Enjoy ipV6 over LTE on your connected objet!
