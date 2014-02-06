@@ -79,9 +79,9 @@ Get IPv6 working
 ==================
 Yes, IPv6 works fine on your kit. To get it set up, do the following:
 <ul>
-<li>change the /etc/network/interfaces file</li>
-replace line <code>iface wwan0 inet dhcp</code> by line <code>iface wwan0 inet6 dhcp</code>
-<li>change the /home/root/4Glink file</li>
+<li>change the /etc/network/interfaces file<br />
+replace line <code>iface wwan0 inet dhcp</code> by line <code>iface wwan0 inet6 dhcp</code></li>
+<li>change the /home/root/4Glink file<br />
 replace the lines<br />
 <code>dhclient wwan0</code><br />
 with <br />
@@ -90,16 +90,16 @@ with <br />
 sleep 1
 ifconfig wwan0 up
 route -A inet6 add default dev wwan0</code>
-</pre><br />
+</pre>
 ...and  replace the line<br />
 <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
 with the line<br />
-<code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code><br />
-<li>in the file /etc/resolv.conf, add the following lines:<br /></li>
+<code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code></li>
+<li>in the file /etc/resolv.conf, add the following lines:<br />
 <pre>
 <code>nameserver 2001:4860:4860::8888
 nameserver 2001:4860:4860::8844</code>
-</pre>
+</pre></li>
 </ul>
 Once you restart your beaglebone, you should be connected to ipv6 and able to ping<br />
 example: <code>ping6 alcatel-lucent.com</code><br />
