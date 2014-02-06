@@ -85,17 +85,20 @@ replace line <code>iface wwan0 inet dhcp</code> by line <code>iface wwan0 inet6 
 replace the lines<br />
 <code>dhclient wwan0</code><br />
 with <br />
-<code>ifconfig wwan0 down<br />
+<pre>
+<code>ifconfig wwan0 down
 sleep 1<br />
-ifconfig wwan0 up</code><br />
+ifconfig wwan0 up</code>
+</pre><br />
 ...and  replace the line<br />
 <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
 with the line <code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code>
-<li>in the file /etc/resolv.conf, add the following lines:
+<li>in the file /etc/resolv.conf, add the following lines:<br /></li>
+<pre>
 <code>nameserver 2001:4860:4860::8888
 nameserver 2001:4860:4860::8844</code>
-</li>
+</pre>
 </ul>
-Once you restart your beaglebone, you should be connected to ipv6 and able to ping
-<code>ping6 alcatel-lucent.com</code>
-Enjoy ^_^
+Once you restart your beaglebone, you should be connected to ipv6 and able to ping<br />
+example: <code>ping6 alcatel-lucent.com</code><br />
+Enjoy the ipV6 over LTE on your connected objet!
