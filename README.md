@@ -38,14 +38,14 @@ Connect to the kit / Ethernet style
 By default, the BeagleBone Black that comes with the kit is configured with the static IP address 192.168.1.2 for its ethernet connection. You can connect it to your LAN if it is in the 192.168.1.x subnet.
 
 1 - plug an ethernet cable between your BeagleBone Black and your router, switch, or PC
-3 - you can ssh into the BeagleBone Black at address 192.168.1.2 using user "root" (no password by default)
+2 - you can ssh into the BeagleBone Black at address 192.168.1.2 using user "root" (no password by default)
 <pre>
 <code>
 ssh -l root 192.168.1.2
 </code>
 </pre>
-4 - you can get access the BeagleBone Black info page at the url http://192.168.1.2
-5 - you can access the Cloud9 IDE of the beagleBone Black using your web browser at the url http://192.168.1.2:3000
+3 - you can get access the BeagleBone Black info page at the url http://192.168.1.2
+4 - you can access the Cloud9 IDE of the beagleBone Black using your web browser at the url http://192.168.1.2:3000
 
 Please, close the door
 ======================
