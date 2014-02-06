@@ -27,11 +27,9 @@ Connect to the kit / USB style
 <li>plug the mini usb end of the usb cable into the BeagleBone Black usb slot located near the ethernet slot</li>
 <li>plug the other end of the usb cable into a PC. The BeagleBone Black should establish automatically create a link to the PC and be accessible at the address 192.168.7.2</li>
 <li>you can ssh into the BeagleBone Black at address 192.168.7.2 using user "root" (no password by default)</li>
-<pre>
 <code>
 ssh -l root 192.168.7.2
 </code>
-</pre>
 <li>you can get access the BeagleBone Black info page at the url http://192.168.7.2</li>
 <li>you can access the Cloud9 IDE of the beagleBone Black using your web browser at the url http://192.168.7.2:3000</li>
 </ul>
@@ -55,7 +53,7 @@ Please, close the door
 ======================
 
 By default, in the BeagleBone Black the root user has no password defined.
-Once logged in through ssh, you should set your own password to restrict the access to this account.
+Once logged in through ssh, you should set your own password to restrict the access to this account.<br />
 <code>
 passwd My_N3w_PassW0rd
 </code>
@@ -72,5 +70,5 @@ Write and test your first code with Cloud9
 <li>test your code by hitting the "Run" button on top (or use the Control+F5 shortcut)</li>
 </ul>
 
-Congratulations! You have just tamed your BeagleBone Black!
+Congratulations! You have just tamed your BeagleBone Black!<br />
 Now go and build awesome stuff!
