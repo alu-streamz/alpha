@@ -19,7 +19,7 @@ OPTIONS=""
 
 getip() {
 		OLDIP=`cat ./old.ip`
-		IP=`/sbin/ifconfig $IFACE | grep -e 'inet6.*Link' | tr -s " " | cut -d" " -f4`
+		IP=`/sbin/ifconfig $IFACE | grep -e 'inet6.*Global' | tr -s " " | cut -d" " -f4`
 		if [ -z "$IP" ]; then
 			IP=`/sbin/ifconfig $IFACE | fgrep "inet ad" | cut -f2 -d":" | cut -f1 -d" "`
 		fi
