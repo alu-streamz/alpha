@@ -113,10 +113,12 @@ route -A inet6 add default dev wwan0</code>
 <code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
 with the line<br />
 <code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code></li>
-<li>in the file /etc/resolv.conf, add the following lines:<br />
+<li>To add the ipv6 dns servers in the file /etc/resolv.conf, type the following command:<br />
 <pre>
-<code>nameserver 2001:4860:4860::8888
-nameserver 2001:4860:4860::8844</code>
+<code>cat >>EOF > /etc/resolv.conf
+nameserver 2001:4860:4860::8888
+nameserver 2001:4860:4860::8844
+EOF</code>
 </pre></li>
 </ul>
 Once you restart your beaglebone, you should be connected to ipv6 and able to ping.<br />
