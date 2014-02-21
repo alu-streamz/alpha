@@ -116,6 +116,7 @@ with the line<br />
 <li>To add the ipv6 dns servers in the file /etc/resolv.conf, type the following command:<br />
 <pre>
 <code>cat >>EOF > /etc/resolv.conf
+nameserver 2a01:cd00:7fff:0:192:168:10:110
 nameserver 2001:4860:4860::8888
 nameserver 2001:4860:4860::8844
 EOF</code>
