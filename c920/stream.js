@@ -26,7 +26,7 @@ function cmd_exec(cmd, args, cb_stdout, cb_end) {
 }
 
 function start_stream(req, res) {
-    new cmd_exec('/home/root/streamz/stream.sh', ['start',req.ip], 
+    new cmd_exec('/home/root/c920/stream.sh', ['start',req.ip], 
       function (me, data) {me.stdout += data.toString();},
       function (me) {me.exit = 1;}
     );
@@ -34,7 +34,7 @@ function start_stream(req, res) {
 }
 
 function stop_stream(req, res) {
-    new cmd_exec('/home/root/streamz/stream.sh', ['stop',req.ip], 
+    new cmd_exec('/home/root/c920/stream.sh', ['stop',req.ip], 
       function (me, data) {me.stdout += data.toString();},
       function (me) {me.exit = 1;}
     );
