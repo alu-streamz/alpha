@@ -5,7 +5,7 @@ Simply run the following commands.<br />
 <code>opkg install ntp
 rm /etc/localtime
 ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
-cat <<EOF > /etc/ntp.conf
+cat \<\<EOF \> /etc/ntp.conf
 driftfile /etc/ntp.drift
 server 0.fr.pool.ntp.org
 server 1.fr.pool.ntp.org
@@ -13,7 +13,7 @@ server 2.fr.pool.ntp.org
 server 3.fr.pool.ntp.org
 restrict default ignore
 EOF
-cat <<EOF > /lib/systemd/system/ntpd.service
+cat <\<\EOF \> /lib/systemd/system/ntpd.service
 [Unit]
 Description=Network Time Service
 After=network.target
@@ -26,7 +26,7 @@ ExecStart=/usr/bin/ntpd -p /run/ntpd.pid
 [Install]
 WantedBy=multi-user.target
 EOF
-cat <<EOF /lib/systemd/system/ntpdate.service
+cat \<\<EOF /lib/systemd/system/ntpdate.service
 [Unit]
 Description=Network Time Service (one-shot ntpdate mode)
 Before=ntpd.service
