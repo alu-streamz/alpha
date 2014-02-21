@@ -9,7 +9,7 @@ Voici la procédure à suivre pour installer et utiliser Bonecam sur votre kit:
 <ul>
 <li>Créez un répertoire pour y mettre les scripts, par exemple le répertoire /home/root/c920</li>
 <li>Copiez le fichier gst-start.sh sur votre beaglebone dans le répertoire que vous avez créé à cet effet, et rendez le executable:
-<code>chmod +x gst-start.sh</code></li>
+<code>chmod +x gst_start.sh</code></li>
 <li>Copiez le répertoire bonecam sur votre beaglebone dans le répertoire que vous avez créé à cet effet</li>
 <li>Dans le répertoire bonecam, compilez bonecam: <code>chmod +x build; ./build</code></li>
 <li>Installez le plugin gstreamer pour supporter le flux h264 généré par la camera C920:
