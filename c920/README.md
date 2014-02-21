@@ -15,8 +15,9 @@ Voici la procédure à suivre pour installer et utiliser Bonecam sur votre kit:
 <li>Installez le plugin gstreamer pour supporter le flux h264 généré par la camera C920:
 <code>opkg install gst-plugins-bad-h264parse</code></li>
 <li>Copiez le fichier c920.sdp sur votre laptop</li>
-<li>Sur votre beaglebone, lancez le script gst-start.sh suivi de l'adresse IP de votre laptop</li>
-<li>Sur votre laptop, double-cliquez sur le fichier c920.sdp. Vlc devrait alors se lancer et afficher le flux de votre C920 au bout de quelques secondes.</li>
+<li>Sur votre beaglebone, lancez le script gst-start.sh suivi de l'adresse IP de votre laptop
+<code>./gst_start.sh 172.27.31.12</code></li>
+<li>Sur votre laptop, double-cliquez sur le fichier <code>c920.sdp</code>. Vlc devrait alors se lancer et afficher le flux de votre C920 au bout de quelques secondes.</li>
 <li>Pour arrêter le flux video sur votre Beaglebone, faites Ctrl+C</li>
 </ul>
 
@@ -31,7 +32,7 @@ Il est aussi nécessaire de pouvoir atteindre votre kit à distance depuis votre
 <li>Copiez le fichier stream.sh dans le répertoire dans lequel vous avez précédemment mis le script pour gstreamer (dans notre exemple /home/root/c920), et rendez le executable:
 <code>chmod +x stream.sh</code></li>
 <li>Installez le middleware "express" pour nodejs via npm comme suit:
-<code>npm set strict-ssl false
+<code>npm set strict-ssl false<br />
 npm install -g express</code></li>
 <li>Via l'IDE cloud9 de votre Beaglebone, créez dans le répertoire demo un nouveau fichier via menu File>New File (ou en utilisant le raccourci Ctrl+N), copiez-y le contenu du fichier stream.js et sauvegardez le(Ctrl+S)</li>
 <li>Dans votre navigateur web, glissez le fichier stream.js dans le répertoire "autorun"</li>
