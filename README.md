@@ -99,30 +99,17 @@ Yes, IPv6 works fine on your kit. To get it set up, do the following:
 <ul>
 <li>change the /etc/network/interfaces file<br />
 replace line <code>iface wwan0 inet dhcp</code> by line <code>iface wwan0 inet6 dhcp</code></li>
-<li>change the /home/root/4Glink file<br />
-replace the lines<br />
-<code>dhclient wwan0</code><br />
-with <br />
-<pre>
-<code>ifconfig wwan0 down
-sleep 1
-ifconfig wwan0 up
-route -A inet6 add default dev wwan0</code>
-</pre>
-...and  replace the line<br />
-<code>echo 'AT^NDISDUP=1,1,"ipv4_apn","apn_user"," apn_password"\r\n' > /dev/ttyUSB1 </code><br />
-with the line<br />
-<code>echo 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1</code></li>
-<li>To add the ipv6 dns servers in the file /etc/resolv.conf, type the following command:<br />
-<pre>
-<code>cat >>EOF > /etc/resolv.conf
+<li>replace the /home/root/4Glink file with 4Glink_ipv6<br />
+and in this file replace ipv6_apn with the proper IPv6 APN. Ask your streamz contact to get it if you don't know :) </li>
+<li>Set the ipv6 dns servers in the file /etc/resolv.conf as follow:<br />
+<pre><code>
 nameserver 2a01:cd00:7fff:0:192:168:10:110
 nameserver 2001:4860:4860::8888
 nameserver 2001:4860:4860::8844
-EOF</code>
+</code>
 </pre></li>
 </ul>
 Once you restart your beaglebone, you should be connected to ipv6 and able to ping.<br />
-For example: <code>ping6 usine.io</code>   ;)<br />
+For example: <code>ping6 alu-streamz.mobi</code>   ;)<br />
 <br />
-Enjoy ipV6 over LTE on your connected objet!
+Enjoy ipV6 over LTE on your connected object!

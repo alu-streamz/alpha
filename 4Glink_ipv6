@@ -1,0 +1,38 @@
+#!/bin/sh
+
+case "$1" in
+  start)
+    ifconfig wwan0 up
+    sleep 2
+    echo -ne 'AT\r\n' > /dev/ttyUSB1
+    sleep 1
+    echo -ne 'ATZ\r\n' > /dev/ttyUSB1
+    sleep 1
+    echo -ne 'AT+CPIN=0000\r\n' > /dev/ttyUSB1
+    sleep 2
+    echo -ne 'ATQ0 V1 E1 S0=0\r\n' > /dev/ttyUSB1
+    sleep 1
+    echo -ne 'AT^NDISDUP=1,1,"ipv6_apn"\r\n' > /dev/ttyUSB1
+    sleep 15
+	ifconfig wwan0 up
+  ;;
+
+  stop)
+
+  ;;
+
+  disconnect)
+    echo -ne 'AT\r\n' > /dev/ttyUSB1
+    sleep 1
+    echo -ne 'AT^NDISDUP=1,0\r\n' > /dev/ttyUSB1
+    sleep 3
+    ifconfig wwan0 down
+  ;;
+
+  *)
+    echo "usage: 4Glink start|stop|disconnect"
+    exit 1
+  ;;
+esac
+
+exit 0
