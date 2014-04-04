@@ -17,9 +17,12 @@ LOGIN=alu-streamz.mobi-user
 PASSWORD=pass
 OPTIONS=""
 
+BASEDIR=$(dirname $0)
+cd $BASEDIR
+
 getip() {
 		OLDIP=`cat ./old.ip`
-		IP=`/sbin/ifconfig $IFACE | grep -e 'inet6.*Global' | tr -s " " | cut -d" " -f4`
+		IP=`/sbin/ifconfig $IFACE | grep -e 'inet6.*Global' | tr -s " " | cut -d" " -f4 | cut -d"/" -f1`
 		if [ -z "$IP" ]; then
 			IP=`/sbin/ifconfig $IFACE | fgrep "inet ad" | cut -f2 -d":" | cut -f1 -d" "`
 		fi
