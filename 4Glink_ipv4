@@ -19,8 +19,6 @@ case "$1" in
 
 
   stop)
-  ifconfig wwan0 down
-  killall dhclient
   ;;
 
   disconnect)
