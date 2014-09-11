@@ -113,3 +113,40 @@ Once you restart your beaglebone, you should be connected to ipv6 and able to pi
 For example: <code>ping6 alu-streamz.mobi</code>   ;)<br />
 <br />
 Enjoy ipV6 over LTE on your connected object!
+
+
+Backup the image of the internal eMMC to a micro SD card
+==================
+Here are the steps to backup the image of the internal eMMC to a micro SD card:
+<ul>
+<li>on you PC, plug in the micro SD card (typically itself plugged inside a SD card adaptor) in the SD card reader</li>
+<li>format the SD card to FAT format</li>
+<li>copy all files from the <code>images/micro SD card backup tools</code> folder to the SD card</li>
+<li>eject the microSD card from your computer and remove it from the reader</li>
+<li>now plug the micro SD card into the (powered off) BeagleBone Black micro SD card slot</li>
+<li>power the BeagleBone Black through its AC power (not USB)</li>
+<li>the 4 leds on the BeagleBone Black should start blinking, while the backup is in progress</li>
+<li>when the backup is done, the 4 leds on the BeagleBone Black should remain solid (this takes generally up to 10 minutes)</li>
+<li>unpower the BeagleBone Black, and remove the micro SD card</li>
+<li>the eMMC image is now on the micro SD card, typically named <code>BeagleBoneBlack-eMMC-image-$RANDOM.img</code>, to avoid accidental erasing of a previous backed up image</li>
+<li>archive the eMMC image file from the micro SD onto your computer, and remove it from the micro SD card to avoid any future disk space shortage on the micro SD card</li>
+</ul>
+
+
+Restore an eMMC image from the micro SD card to the internal eMMC
+==================
+Here are the steps to backup the image of the internal eMMC to a micro SD card:
+<ul>
+<li>on you PC, plug in the micro SD card (typically itself plugged inside a SD card adaptor) in the SD card reader</li>
+<li>format the SD card to FAT format, if not already done</li>
+<li>copy all files from the <code>images/micro SD card restore tools</code> folder to the SD card (or just the autorun.sh if you are using a micro SD card prepared with the backup files)</li>
+<li>upload on the micro SD card the eMMC image you want to restore for the BeagleBone Black. (remove unnecessary eMMC images you might have put there, if you are a serial eMMC flasher)</li>
+<li>edit the autorun.sh file on your micro SD card, and replace the image file name to match the one you just uploaded</li>
+<li>eject the microSD card from your computer and remove it from the reader</li>
+<li>now plug the micro SD card into the (powered off) BeagleBone Black micro SD card slot</li>
+<li>power the BeagleBone Black through its AC power (not USB)</li>
+<li>the 4 leds on the BeagleBone Black should start blinking, while the restore is in progress</li>
+<li>when the backup is done, the 4 leds on the BeagleBone Black should remain solid (this takes generally up to 10 minutes)</li>
+<li>unpower the BeagleBone Black, and remove the micro SD card</li>
+<li>the eMMC image is now flashed onto the internal eMMC</li>
+</ul>
